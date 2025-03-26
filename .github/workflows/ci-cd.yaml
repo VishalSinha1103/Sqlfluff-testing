@@ -24,6 +24,10 @@ jobs:
       - name: List all folders
         run: |
           ls -l
+      - name: Debug - Verify SQL Files
+        run: |
+          echo "📁 Verifying SQL files in sqlfiles/"
+          ls -l ${{ github.workspace }}/sqlfiles
 
       - name: Lint SQL files
         run: |
