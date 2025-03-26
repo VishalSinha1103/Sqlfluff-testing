@@ -19,7 +19,10 @@ jobs:
       - name: Lint SQL files
         run: |
           sqlfluff lint '**/*.sql' --dialect ansi
-
+      - name: Debug - Check SQLFluff file detection
+        run: |
+          echo "📄 SQLFluff will attempt to lint the following files:"
+          sqlfluff lint '**/*.sql' --dialect ansi --nocolor --verbose
       - name: Search for environment patterns
         run: |
           if grep -rnw '.' -e '@dev@' -e '@test@' -e '@prod@'; then
