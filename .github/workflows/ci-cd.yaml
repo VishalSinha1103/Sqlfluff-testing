@@ -16,6 +16,11 @@ jobs:
       - name: Install SQLFluff
         run: |
           pip install sqlfluff
+      - name: Debug - List all files
+        run: |
+          echo "📁 Listing all files and folders..."
+          tree -a
+
 
       - name: Lint SQL files
         run: |
