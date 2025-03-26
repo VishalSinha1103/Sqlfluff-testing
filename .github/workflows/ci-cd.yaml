@@ -32,8 +32,7 @@ jobs:
       - name: Lint SQL files
         run: |
           echo "📄 Linting SQL files..."
-          $ sqlfluff lint tables.sql --dialect ansi
-
+          sqlfluff lint "tables.sql" --dialect snowflake || exit 1
       - name: Debug - Check SQLFluff file detection
         run: |
           echo "📄 SQLFluff will attempt to lint the following files:"
