@@ -12,6 +12,4 @@ INSERT INTO users (id, name, email) VALUES
 (2, 'Bob', 'bob@example.com');
 
 -- Environment-specific condition (improved formatting)
-SELECT *
-FROM users
-WHERE "env" = '@dev@';  -- Use quotes to avoid reserved keyword issue
+SELECT * FROM users WHERE "env" = '@dev@';  -- Use quotes to avoid reserved keyword issue
