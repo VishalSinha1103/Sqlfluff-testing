@@ -21,6 +21,9 @@ jobs:
       #     echo "📁 Listing all files and folders..."
       #     tree -a
 
+      - name: List all folders
+        run: |
+          ls -l
 
       - name: Lint SQL files
         run: |
