@@ -16,16 +16,16 @@ jobs:
       - name: Install SQLFluff
         run: |
           pip install sqlfluff
-      - name: Debug - List all files
-        run: |
-          echo "📁 Listing all files and folders..."
-          tree -a
+      # - name: Debug - List all files
+      #   run: |
+      #     echo "📁 Listing all files and folders..."
+      #     tree -a
 
 
       - name: Lint SQL files
         run: |
           echo "📄 Linting SQL files..."
-          sqlfluff lint 'sqlfiles/**/*.sql' --dialect ansi || exit 1
+          sqlfluff lint 'sqlfiles/*.sql' --dialect ansi || exit 1
       - name: Debug - Check SQLFluff file detection
         run: |
           echo "📄 SQLFluff will attempt to lint the following files:"
