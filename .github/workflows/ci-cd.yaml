@@ -33,10 +33,7 @@ jobs:
         run: |
           echo "📄 Linting SQL files..."
           sqlfluff lint "tables.sql" --dialect snowflake || exit 1
-      - name: Debug - Check SQLFluff file detection
-        run: |
-          echo "📄 SQLFluff will attempt to lint the following files:"
-          $ sqlfluff lint tables.sql --dialect ansi
+      
       - name: Search for environment patterns
         run: |
           if grep -rnw '.' -e '@dev@' -e '@test@' -e '@prod@'; then
