@@ -25,7 +25,7 @@ jobs:
       - name: Lint SQL files
         run: |
           echo "📄 Linting SQL files..."
-          sqlfluff lint './sqlfiles/*.sql' --dialect ansi || exit 1
+          sqlfluff lint "${{ github.workspace }}/sqlfiles/*.sql" --dialect ansi || exit 1
 
       - name: Debug - Check SQLFluff file detection
         run: |
