@@ -18,7 +18,8 @@ jobs:
 
       - name: Lint SQL files
         run: |
-          sqlfluff lint '**/*.sql' --dialect ansi
+          echo "📄 Linting SQL files..."
+          sqlfluff lint 'sqlfiles/**/*.sql' --dialect ansi || exit 1
       - name: Debug - Check SQLFluff file detection
         run: |
           echo "📄 SQLFluff will attempt to lint the following files:"
