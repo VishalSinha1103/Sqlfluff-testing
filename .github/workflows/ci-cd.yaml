@@ -1,7 +1,7 @@
 name: SQL Lint and Pattern Check
 
 on:
-  workflow_dispatch:
+  push:
  
 
 jobs:
