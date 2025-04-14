@@ -16,7 +16,7 @@ jobs:
       - name: Install SQLFluff
         run: |
           pip install sqlfluff
-          pip install -e ./sql-fluff
+          pip install -e ./sqlfluff-plugin-iceberg      
       # - name: Debug - List all files
       #   run: |
       #     echo "📁 Listing all files and folders..."
