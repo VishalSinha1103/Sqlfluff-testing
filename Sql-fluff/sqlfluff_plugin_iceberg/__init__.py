@@ -1,1 +1,0 @@
-# SQLFluff Iceberg Plugin Init
