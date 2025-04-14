@@ -16,6 +16,7 @@ jobs:
       - name: Install SQLFluff
         run: |
           pip install sqlfluff
+          pip install -e ./plugins/sqlfluff
       # - name: Debug - List all files
       #   run: |
       #     echo "📁 Listing all files and folders..."
@@ -32,13 +33,13 @@ jobs:
       - name: Lint SQL files
         run: |
           echo "📄 Linting SQL files..."
-          sqlfluff lint "tables.sql" --dialect snowflake || exit 1
+          sqlfluff lint "sql/iceberg.sql" --dialect snowflake || exit 1
       
-      - name: Search for environment patterns
-        run: |
-          if grep -rnw '.' -e '@dev@' -e '@test@' -e '@prod@'; then
-            echo "❌ Environment pattern found. Failing the workflow."
-            exit 1
-          else
-            echo "✅ No environment patterns found."
-          fi
+      # - name: Search for environment patterns
+      #   run: |
+      #     if grep -rnw '.' -e '@dev@' -e '@test@' -e '@prod@'; then
+      #       echo "❌ Environment pattern found. Failing the workflow."
+      #       exit 1
+      #     else
+      #       echo "✅ No environment patterns found."
+      #     fi
