@@ -19,6 +19,8 @@ jobs:
           pip install sqlfluff
           cd sqlfluff-plugin-iceberg
           pip install -e .
+          pip list | grep sqlfluff-plugin-iceberg
+
 
       - name: Lint SQL files
         run: |
