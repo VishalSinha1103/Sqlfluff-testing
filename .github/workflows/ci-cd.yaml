@@ -1,7 +1,9 @@
 name: SQLFluff Linting
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - testanother
 jobs:
   lint:
     runs-on: ubuntu-latest
