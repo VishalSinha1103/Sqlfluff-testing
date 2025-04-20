@@ -23,9 +23,8 @@ jobs:
 
       - name: Verify dialect loading
         run: |
-          python -c "import sqlfluff; print(sqlfluff.dialects.dialect_snowflake.Dialect.dialect_name)"
-          python -c "import sqlfluff_plugin_iceberg; print(sqlfluff_plugin_iceberg.plugin.load_dialect().name)"
-
+          python -c "import sqlfluff; print(sqlfluff.core.Linter().dialects)"
+          python -c "import sqlfluff_plugin_iceberg; print(sqlfluff_plugin_iceberg.plugin.load_dialect())"
 
       - name: Lint SQL files
         run: |
