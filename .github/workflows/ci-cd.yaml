@@ -1,5 +1,4 @@
 name: SQL Lint and Pattern Check
-
 on:
   push:
  
