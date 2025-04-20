@@ -1,9 +1,7 @@
-from sqlfluff.core.plugin import hookimpl
-from sqlfluff.dialects.dialect_snowflake import dialect as snowflake_dialect
-from .iceberg_grammar import CreateIcebergTableSegment
+from sqlfluff.dialects import dialect_snowflake
+from sqlfluff.core.dialects import Dialect
 
-@hookimpl
-def get_dialect_patch():
-    dialect = snowflake_dialect.copy_as("snowflake_with_iceberg")
-    dialect.replace(CreateIcebergTableSegment)
+def load_dialect() -> Dialect:
+    dialect = dialect_snowflake.Dialect.copy_as("snowflake_with_iceberg")
+    # (register grammar additions here...)
     return dialect
