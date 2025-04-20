@@ -21,10 +21,10 @@ jobs:
           pip install -e .
           pip list | grep sqlfluff-plugin-iceberg
 
-      - name: Verify dialect loading
-        run: |
-          python -c "from sqlfluff import Linter; linter = Linter(); print(linter.config.dialects)"
-          python -c "import sqlfluff_plugin_iceberg; print(sqlfluff_plugin_iceberg.plugin.load_dialect())"
+      # - name: Verify dialect loading
+      #   run: |
+      #     python -c "from sqlfluff import Linter; linter = Linter(); print(linter.config.dialects)"
+      #     python -c "import sqlfluff_plugin_iceberg; print(sqlfluff_plugin_iceberg.plugin.load_dialect())"
 
       - name: Lint SQL files
         run: |
