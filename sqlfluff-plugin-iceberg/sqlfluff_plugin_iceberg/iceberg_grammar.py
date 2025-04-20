@@ -1,28 +1,28 @@
 from sqlfluff.core.parser import (
     BaseSegment,
-    Sequence,
-    Indent,
-    Dedent,
-    Bracketed,
-    Delimited,
-    Ref,
+    KeywordSegment,
+    StringParser,
 )
 
 class CreateIcebergTableSegment(BaseSegment):
-    """A `CREATE ICEBERG TABLE` statement."""
+    """This represents the CREATE ICEBERG TABLE statement."""
+    
+    type = "create_iceberg_table"
 
-    type = "create_iceberg_table_statement"
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.name = kwargs.get("name")
+    
+    @classmethod
+    def parse(cls, *args, **kwargs):
+        # Simple parsing to match the "CREATE ICEBERG TABLE" statement
+        return cls.parse_segment(
+            KeywordSegment("CREATE"),
+            KeywordSegment("ICEBERG"),
+            KeywordSegment("TABLE"),
+            StringParser("name"),
+        )
 
-    match_grammar = Sequence(
-        "CREATE",
-        "ICEBERG",
-        "TABLE",
-        Indent,
-        Ref("TableReferenceSegment"),
-        Bracketed(
-            Delimited(
-                Ref("ColumnDefinitionSegment")
-            )
-        ),
-        Dedent
-    )
+
+def create_iceberg_table_segment():
+    return CreateIcebergTableSegment
