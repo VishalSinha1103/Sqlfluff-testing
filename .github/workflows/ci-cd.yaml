@@ -15,6 +15,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install sqlfluff
+          pwd
+          ls -la
+          ls -la sqlfluff-plugin-iceberg || echo "❌ Plugin folder not found"
           cd sqlfluff-plugin-iceberg
           pip install -e .
           cd ..
