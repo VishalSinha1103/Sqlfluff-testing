@@ -6,9 +6,9 @@ setup(
     description="SQLFluff plugin for Snowflake CREATE ICEBERG TABLE support",
     author="Your Name",
     author_email="your.email@example.com",
-    packages=["sqlfluff_snowflake_iceberg"],  # Be explicit about packages
+    packages=find_packages(),
     install_requires=[
-        "sqlfluff>=2.0.0,<4.0.0",  # Support SQLFluff 2.x and 3.x
+        "sqlfluff>=2.0.0",
     ],
     entry_points={
         "sqlfluff": [
