@@ -1,0 +1,23 @@
+[sqlfluff]
+dialect = snowflake
+templater = jinja
+
+[sqlfluff:indentation]
+tab_space_size = 4
+indent_unit = space
+
+[sqlfluff:rules]
+exclude_rules = L004
+
+[sqlfluff:rules:L004]
+keywords = 
+    ALL,
+    ALTER,
+    AND,
+    ANY,
+    AS,
+    ASC,
+    BETWEEN,
+    # ... other keywords
+    WITH,
+    ICEBERG  # Add ICEBERG to prevent it being flagged
