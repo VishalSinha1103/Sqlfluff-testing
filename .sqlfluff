@@ -1,5 +1,5 @@
 [sqlfluff]
-dialect = snowflake
+dialect = snowflake_with_iceberg
 templater = jinja
 
 [sqlfluff:indentation]
