@@ -1,7 +1,7 @@
 -- Initial table creation
 CREATE OR REPLACE TABLE iceberg_table (
     id INT,
-    name STRING
+    naming STRING
 )
 USING ICEBERG;
 
