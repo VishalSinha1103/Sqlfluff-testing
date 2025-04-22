@@ -17,9 +17,9 @@ jobs:
       - name: Install dependencies
         run: |
           pip install sqlfluff
-          # cd sqlfluff-plugin-iceberg
-          # pip install -e .
-          # # pip list | grep sqlfluff_plugin_iceberg
+          cd sqlfluff-plugin-iceberg
+          pip install -e .
+          # pip list | grep sqlfluff_plugin_iceberg
 
       # - name: Verify dialect loading
       #   run: |
