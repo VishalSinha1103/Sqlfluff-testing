@@ -17,8 +17,9 @@ jobs:
       - name: Install dependencies
         run: |
           pip install sqlfluff
-          cd sqlfluff-plugin-iceberg
-          pip install -e .
+          pip install .
+          # cd sqlfluff-plugin-iceberg
+          # pip install -e .
           # pip list | grep sqlfluff_plugin_iceberg
 
       # - name: Verify dialect loading
@@ -30,4 +31,4 @@ jobs:
         run: |
           echo "📄 Linting SQL files..."
           sqlfluff dialects
-          sqlfluff lint sql/ --dialect snowflake
+          sqlfluff lint sql/ --dialect snowflake_with_iceberg
