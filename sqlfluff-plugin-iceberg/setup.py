@@ -12,7 +12,7 @@ setup(
     ],
     entry_points={
         "sqlfluff": [
-            "sqlfluff_plugin_iceberg=sqlfluff_plugin_iceberg",
+            "sqlfluff_snowflake_iceberg=sqlfluff_plugin_iceberg",
         ],
     },
     python_requires=">=3.7",
