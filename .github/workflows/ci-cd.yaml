@@ -30,4 +30,4 @@ jobs:
         run: |
           echo "📄 Linting SQL files..."
           sqlfluff dialects
-          sqlfluff lint sql/ --dialect snowflake
+          sqlfluff lint sql/ --dialect sqlfluff-plugin-iceberg
