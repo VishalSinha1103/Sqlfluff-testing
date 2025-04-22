@@ -11,8 +11,8 @@ setup(
         "sqlfluff>=2.0.0",
     ],
     entry_points={
-        "sqlfluff": [
-            "sqlfluff_plugin_iceberg=sqlfluff_plugin_iceberg",
+    "sqlfluff": [
+        "sqlfluff_snowflake_iceberg=sqlfluff_plugin_iceberg",
         ],
     },
     python_requires=">=3.7",
