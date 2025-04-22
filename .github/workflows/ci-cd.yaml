@@ -19,7 +19,7 @@ jobs:
           # pip install sqlfluff
           cd sqlfluff-plugin-iceberg
           pip install -e .
-          pip list | grep sqlfluff-plugin-iceberg
+          pip list | grep sqlfluff_plugin_iceberg
 
       # - name: Verify dialect loading
       #   run: |
@@ -30,4 +30,4 @@ jobs:
         run: |
           echo "📄 Linting SQL files..."
           sqlfluff dialects
-          sqlfluff lint sql/ --dialect sqlfluff-plugin-iceberg
+          sqlfluff lint sql/ --dialect sqlfluff_plugin_iceberg
