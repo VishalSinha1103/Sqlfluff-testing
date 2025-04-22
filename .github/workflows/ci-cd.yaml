@@ -29,4 +29,4 @@ jobs:
       - name: Lint SQL files
         run: |
           echo "📄 Linting SQL files..."
-          sqlfluff lint sql/ --dialect snowflake
+          sqlfluff lint sql/ --dialect snowflake_with_iceberg
