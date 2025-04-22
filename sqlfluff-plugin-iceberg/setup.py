@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="sqlfluff-snowflake-iceberg",
+    name="sqlfluff-plugin-iceberg",
     version="0.1.0",
     description="SQLFluff plugin for Snowflake CREATE ICEBERG TABLE support",
     author="Your Name",
@@ -12,7 +12,7 @@ setup(
     ],
     entry_points={
         "sqlfluff": [
-            "sqlfluff_snowflake_iceberg=sqlfluff_snowflake_iceberg",
+            "sqlfluff_plugin_iceberg=sqlfluff_plugin_iceberg",
         ],
     },
     python_requires=">=3.7",
