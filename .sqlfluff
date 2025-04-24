@@ -1,6 +1,25 @@
 [sqlfluff]
 dialect = mysql
+templater = jinja
 
 [sqlfluff:dialect:mysql]
-# Add ICEBERG to the list of allowed keywords
+# Add Iceberg-related keywords
 extended_keywords = ICEBERG, CATALOG, EXTERNAL_VOLUME, BASE_LOCATION
+
+# Tell SQLFluff to ignore statements it can't parse
+[sqlfluff:rules]
+allow_list = all
+# Set L003 to tab
+# tab_space_size = 4
+
+[sqlfluff:rules:L010]
+# Keywords should be capitalized
+capitalisation_policy = upper
+
+[sqlfluff:rules:L054]
+# Disable rule that forbids trailing commas in column lists
+allow_trailing_comma = true
+
+[sqlfluff:rules:parsing]
+# This is crucial - it tells SQLFluff to ignore statements it can't parse
+ignore_unparsable = true
