@@ -10,5 +10,5 @@ setup(
             "sqlfluff_plugin_iceberg=sqlfluff_plugin_iceberg",
         ]
     },
-    install_requires=["sqlfluff>=2.0.0"],
+    install_requires=["sqlfluff>=3.4.0"],
 )
