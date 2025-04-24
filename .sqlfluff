@@ -1,0 +1,6 @@
+[sqlfluff]
+dialect = mysql
+
+[sqlfluff:dialect:mysql]
+# Add ICEBERG to the list of allowed keywords
+extended_keywords = ICEBERG, CATALOG, EXTERNAL_VOLUME, BASE_LOCATION
