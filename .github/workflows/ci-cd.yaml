@@ -21,9 +21,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install sqlfluff
-          # pip install -e ./sqlfluff-plugin-iceberg
-          cd sqlfluff-plugin-iceberg
-          pip install -e .
+          # # pip install -e ./sqlfluff-plugin-iceberg
+          # cd sqlfluff-plugin-iceberg
+          # pip install -e .
         # pip install --no-cache-dir git+https://github.com/VishalSinha1103/Sqlfluff-testing.git@main#egg=sqlfluff-plugin-iceberg&subdirectory=sqlfluff-plugin-iceberg
 
       # - name: Debug - List all files
@@ -42,7 +42,7 @@ jobs:
       - name: Lint SQL files
         run: |
           echo "📄 Linting SQL files..."
-          sqlfluff lint sql/ --dialect snowflake
+          sqlfluff lint sql/ --dialect mysql
 
        # sqlfluff lint sql/ --dialect snowflake
         # sqlfluff lint sql/ --dialect snowflake_with_iceberg
