@@ -9,35 +9,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Debug Path
-        run: |
-          pwd
-          ls -la
-          ls -la ./sqlfluff-plugin-iceberg
-
+       
       - name: Set up Python & Install SQLFluff + Plugin
         run: |
           python -m pip install --upgrade pip
           pip install sqlfluff
-          # pip install -e ./sqlfluff-plugin-iceberg
-          cd sqlfluff-plugin-iceberg
-          pip install -e .
-        # pip install --no-cache-dir git+https://github.com/VishalSinha1103/Sqlfluff-testing.git@main#egg=sqlfluff-plugin-iceberg&subdirectory=sqlfluff-plugin-iceberg
-
-      # - name: Debug - List all files
-      #   run: |
-      #     echo "📁 Listing all files and folders..."
-      #     tree -a
-
-      - name: List all folders
-        run: |
-          ls -l
-      - name: Debug - Verify SQL Files
-        run: |
-          echo "📁 Verifying SQL files in sqlfiles/"
-          ls -l ${{ github.workspace }}/sqlfiles
 
       - name: Lint SQL files
         run: |
