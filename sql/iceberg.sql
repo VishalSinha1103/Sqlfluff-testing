@@ -1,6 +1,9 @@
-CREATE ICEBERG TABLE IF NOT EXISTS testin (
-    id INT PRIMARY KEY,
-    "name" VARCHAR(100),         -- Escaped to avoid reserved keyword issue
-    "email" VARCHAR(100),        -- Escaped to avoid reserved keyword issue
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+CREATE TABLE IF NOT EXISTS SAMPLE_DB.TEST.TABLE5 (
+    INSUP_FLAG STRING COMMENT 'INSERT and UPDATE Flag',
+    SETID STRING COMMENT '',
+    MODIFIED_TIMESTAMP TIMESTAMP
+)
+COMMENT = ''
+CATALOG = 'SNOWFLAKE'
+EXTERNAL_VOLUME = 'SAMPLE_EXT_VOL_ICEBERG_EXVOL'
+BASE_LOCATION = 'sample/action_list';
