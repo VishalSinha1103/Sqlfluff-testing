@@ -13,7 +13,11 @@ jobs:
       - name: Set up Python & Install SQLFluff + Plugin
         run: |
           python -m pip install --upgrade pip
-          pip install sqlfluff
+          git clone https://github.com/sqlfluff/sqlfluff.git
+          cd sqlfluff
+          pip install -e .
+
+
 
       - name: Lint SQL files
         run: |
