@@ -1,9 +1,9 @@
--- -- Initial table creation
--- CREATE OR REPLACE TABLE iceberg_table (
---     id INT,
---     name STRING
--- )
--- USING ICEBERG;
-
--- -- Add new column in schema evolution
--- ALTER TABLE iceberg_table ADD COLUMN created_at TIMESTAMP_LTZ;
+CREATE ICEBERG TABLE IF NOT SAMPLE_DB.TEST.TABLE4 (
+    INSUP_FLAG STRING COMMENT 'INSERT and UPDATE Flag',
+    SETID STRING COMMENT '',
+    MODIFIED_TIMESTAMP TIMESTAMP
+)
+COMMENT = ''
+CATALOG = 'SNOWFLAKE'
+EXTERNAL_VOLUME = 'SAMPLE_EXT_VOL_ICEBERG_EXVOL'
+BASE_LOCATION = 'sample/action_list';
